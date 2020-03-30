@@ -1,6 +1,6 @@
 {
   "name": "pedal",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "Amazon Web Services AWS DynamoDB Batch operations",
   "private": false,
   "scripts": {
@@ -11,7 +11,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
-    "dist/index.js"
+    "dist"
   ],
   "peerDependencies": {
     "aws-sdk": "^2.646.0"
@@ -29,8 +29,6 @@
   },
   "homepage": "https://github.com/Temkit/pedal",
   "dependencies": {
-    "hash": "^0.2.1",
-    "is-subset": "^0.1.1",
     "md5": "^2.2.1"
   }
 }

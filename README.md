@@ -1,2 +1,3 @@
-# locuste
-amazon Web Services AWS DynamoDB Batch operations 
+# pedal
+
+amazon Web Services AWS DynamoDB Batch operations

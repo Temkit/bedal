@@ -1,5 +1,5 @@
 {
-  "name": "pedal",
+  "name": "bedal",
   "version": "0.0.1-beta.2",
   "description": "Amazon Web Services AWS DynamoDB Batch operations",
   "private": false,
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Temkit/pedal.git"
+    "url": "https://github.com/Temkit/bedal.git"
   },
   "bugs": {
-    "url": "https://github.com/Temkit/pedal/issues"
+    "url": "https://github.com/Temkit/bedal/issues"
   },
-  "homepage": "https://github.com/Temkit/pedal",
+  "homepage": "https://github.com/Temkit/bedal",
   "dependencies": {
     "md5": "^2.2.1"
   }

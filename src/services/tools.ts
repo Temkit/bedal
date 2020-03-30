@@ -8,17 +8,21 @@ var md5 = require("md5");
  * ```
  *
  * ```typescript
- * const instance = new ToolsModule();
+ * const tools = new ToolsModule();
  * ```
  */
 export class ToolsModule {
-  public chunkArray(myArray: Array<any>, chunk_size: number): Array<any> {
+  /**
+   * @param data  Array to split into multiple chunks.
+   * @param chunk_size  the chunk size, here we will use 25 .
+   */
+  public chunkArray(data: Array<any>, chunk_size: number): Array<any> {
     var index = 0;
-    var arrayLength = myArray.length;
+    var arrayLength = data.length;
     var tempArray = [];
 
     for (index = 0; index < arrayLength; index += chunk_size) {
-      let myChunk = myArray.slice(index, index + chunk_size);
+      let myChunk = data.slice(index, index + chunk_size);
       // Do something if you want with the group
       tempArray.push(myChunk);
     }
@@ -26,6 +30,17 @@ export class ToolsModule {
     return tempArray;
   }
 
+  /**
+   *
+   * This function is used to split an array of object into multiple chunks,
+   * that doesn't contains double object in a single chunk, this way each group
+   * of items to add/update will not contains the same object twice, which will trigger
+   * an exception
+   *
+   *
+   * @param data  the array to split.
+   * @param key  the key we will use to detect doubles.
+   */
   public getChunks = async (data: Array<any>, key: any) => {
     let objectArray: any;
     let tmpdata: Array<any>;

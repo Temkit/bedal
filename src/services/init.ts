@@ -1,6 +1,18 @@
 import { IConfigUser } from "./../spec/config";
 let AWS = require("aws-sdk");
 
+/**
+ * Code blocks are great for examples
+ *
+ * ```
+ * <my-custom-element>Highlight JS will auto detect the language</my-custom-element>
+ * ```
+ *
+ * ```typescript
+ * // Or you can specify the language explicitly
+ * const instance = new MyClass();
+ * ```
+ */
 export class InitModule {
   private static instance: InitModule;
 

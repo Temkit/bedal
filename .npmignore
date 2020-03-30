@@ -1,1 +1,6 @@
 src
+tsconfig
+typedoc.json
+.gitignore
+.github
+__test__

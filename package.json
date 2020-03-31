@@ -1,6 +1,6 @@
 {
   "name": "bedal",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.4",
   "description": "Amazon Web Services AWS DynamoDB Batch operations",
   "private": false,
   "scripts": {

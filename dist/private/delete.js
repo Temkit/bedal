@@ -42,7 +42,7 @@ var DeleteModule = (function () {
     function DeleteModule() {
         var _this = this;
         this.batchDeleteParams = {};
-        this.deleteAll = function (key) { return __awaiter(_this, void 0, void 0, function () {
+        this.deleteAll = function (key, callback) { return __awaiter(_this, void 0, void 0, function () {
             var table, chunks, dataToDeleteParams, data, e_1;
             var _this = this;
             return __generator(this, function (_a) {
@@ -76,19 +76,19 @@ var DeleteModule = (function () {
                                 return item;
                             });
                             _this.batchDeleteParams.RequestItems[init_1.InitModule.getInstance().config.Table] = chunk;
-                            console.log(JSON.stringify(_this.batchDeleteParams, null, 2));
                             init_1.InitModule.getInstance().dynamodb.batchWriteItem(_this.batchDeleteParams, function (err, data) {
-                                if (err)
-                                    console.log(err, err.stack);
-                                else
-                                    console.log(data);
+                                if (err) {
+                                    callback({ error: err });
+                                }
+                                else {
+                                    callback({ data: data });
+                                }
                             });
-                            return _this.batchDeleteParams;
                         });
                         return [3, 3];
                     case 2:
                         e_1 = _a.sent();
-                        console.log(e_1);
+                        callback({ error: e_1 });
                         return [3, 3];
                     case 3: return [2];
                 }

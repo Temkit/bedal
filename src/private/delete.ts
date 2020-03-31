@@ -10,7 +10,7 @@ export class DeleteModule {
     this.tools = new ToolsModule();
   }
 
-  public deleteAll = async (key: any) => {
+  public deleteAll = async (key: any, callback: Function) => {
     try {
       let table: any = {};
       let chunks: Array<any> = [];
@@ -53,20 +53,19 @@ export class DeleteModule {
           InitModule.getInstance().config.Table
         ] = chunk;
 
-        console.log(JSON.stringify(this.batchDeleteParams, null, 2));
-
         InitModule.getInstance().dynamodb.batchWriteItem(
           this.batchDeleteParams,
           function(err: any, data: any) {
-            if (err) console.log(err, err.stack);
-            else console.log(data);
+            if (err) {
+              callback({ error: err });
+            } else {
+              callback({ data: data });
+            }
           }
         );
-
-        return this.batchDeleteParams;
       });
     } catch (e) {
-      console.log(e);
+      callback({ error: e });
     }
   };
 

@@ -100,12 +100,12 @@ var ToolsModule = (function () {
             });
         }); };
     }
-    ToolsModule.prototype.chunkArray = function (myArray, chunk_size) {
+    ToolsModule.prototype.chunkArray = function (data, chunk_size) {
         var index = 0;
-        var arrayLength = myArray.length;
+        var arrayLength = data.length;
         var tempArray = [];
         for (index = 0; index < arrayLength; index += chunk_size) {
-            var myChunk = myArray.slice(index, index + chunk_size);
+            var myChunk = data.slice(index, index + chunk_size);
             tempArray.push(myChunk);
         }
         return tempArray;
